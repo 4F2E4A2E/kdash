@@ -68,6 +68,9 @@ find_suffix() {
 #   "darwin") SUFFIX='macos.tar.gz' ;;
 #   "windows") SUFFIX='windows.tar.gz';;
 #   esac
+  case "$ARCH" in
+  "aarch64") SUFFIX='aarch64-gnu.tar.gz' ;;
+  esac
   echo $SUFFIX
 }
 
