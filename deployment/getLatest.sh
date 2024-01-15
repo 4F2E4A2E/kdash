@@ -60,6 +60,7 @@ find_os() {
 }
 
 find_suffix() {
+  local ARCH=$1
   local OS=$2
   local SUFFIX="$OS.tar.gz"
 #   case "$OS" in
@@ -68,8 +69,8 @@ find_suffix() {
 #   "windows") SUFFIX='windows.tar.gz';;
 #   esac
   case "$ARCH" in
-  "aarch64") SUFFIX='aarch64-gnu.tar.gz' ;;
-  "arm64") SUFFIX='aarch64-gnu.tar.gz' ;;
+  "aarch64") SUFFIX="$OS-aarch64-gnu.tar.gz" ;;
+  "arm64") SUFFIX="$OS-aarch64-gnu.tar.gz" ;;
   esac
   echo $SUFFIX
 }
